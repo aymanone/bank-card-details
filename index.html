@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" type="text/css" href="./style/main.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+ <section id="cardArea">
+   <div id="cardFront">
+  <img src="./images/bg-card-front.png" id="cardFrontBG">
+  <div id="bigCircle" class="cardElement">&nbsp;</div>
+  <div id="smallCircle" class="cardElement">&nbsp;</div>
+  <div id="cardNumber" class="cardElement">
+    0000&nbsp;0000&nbsp;0000&nbsp;0000
+  </div>
+  <div id="cardName">
+   JANE &nbsp;APPLESEED
+  </div>
+  <div id="cardExp">
+   00/00
+  </div>
+  </div>
+
+  
+   <div id="cardBack">
+    <img src="./images/bg-card-back.png" id="cardBackBG">
+    <div id="cardCvc">
+     000
+    </div>
+   </div>
+   
+
+ </section>
+ <section id="formArea">
+   <form onsubmit="fillTheCard(event)">
+     <div id="formHolderName">
+      <label for="holderName">CARDHOLDER NAME</label>
+      <input type="text" name="holderName"
+      pattern="\w+\s\w+"
+      required
+       placeholder="e.g. Jane Appleseed">
+     </div>
+     <div id="formNumber">
+      <label for="cardNumber">CARD NUMBER</label>
+      <input type="text" name="cardNumber" 
+      pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}"
+      required
+       placeholder="e.g. 1234 5678 9123 0000">
+     </div>
+     <div id="formExpirationAndCvc">
+      <div id="formExp">
+      <label for="expDate">EXP. DATE (MM/YY)</label>
+      <div id="formDate">
+      <input type="text" name="expDateMonth" placeholder="MM" 
+      pattern="(0[1-9]|1[0,1,2])"
+        required>
+      <input type="text" name="expDateYear" placeholder="YY"
+      pattern="\d{2,2}"
+       required>
+      </div>
+      </div>
+      <div id="formCvc">
+      <label for="cvc">CVC</label>
+      <input type="text" name="cvc" 
+      pattern="\d{3,3}"
+      placeholder="e.g. 123"  required>
+      </div>
+     </div>
+     <button type="submit" >confirm</button>
+
+   </form>
+
+ </section>
+  
+  <script src="javascript/main.js"></script>
+</body>
+</html>
